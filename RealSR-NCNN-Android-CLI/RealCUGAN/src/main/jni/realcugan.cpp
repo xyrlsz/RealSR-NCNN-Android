@@ -96,11 +96,12 @@ int RealCUGAN::load(const std::string& parampath, const std::string& modelpath)
 #endif
 {
     net.opt.use_vulkan_compute = vkdev != nullptr;
-    net.opt.use_fp16_packed = true;
-    net.opt.use_fp16_storage = true;
-    net.opt.use_fp16_arithmetic = true;
+    net.opt.use_fp16_packed = false;
+    net.opt.use_fp16_storage = false;
+    net.opt.use_fp16_arithmetic = false;
+    net.opt.use_int8_packed = true;
     net.opt.use_int8_storage = true;
-    net.opt.use_int8_arithmetic = false; // 如果是 int8 模型，这一项也建议为 true
+    net.opt.use_int8_arithmetic = true; // 如果是 int8 模型，这一项也建议为 true
     net.opt.use_winograd_convolution = true; // 开启 Winograd 卷积优化 (通常默认开启)
     net.opt.use_sgemm_convolution = true;    // 开启 SGEMM 卷积优化
     if (vkdev) net.set_vulkan_device(vkdev);

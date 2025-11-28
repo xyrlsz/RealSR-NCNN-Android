@@ -42,10 +42,12 @@ int Waifu2x::load(const std::string& parampath, const std::string& modelpath)
 {
 
     net.opt.use_vulkan_compute = vkdev ? true : false;
-    net.opt.use_fp16_packed = true;
-    net.opt.use_fp16_storage = true;
-    net.opt.use_fp16_arithmetic = true;
+    net.opt.use_fp16_packed = false;
+    net.opt.use_fp16_storage = false;
+    net.opt.use_fp16_arithmetic = false;
+    net.opt.use_int8_packed = true;
     net.opt.use_int8_storage = true;
+    net.opt.use_int8_inference = true;
 
     if (vkdev) net.set_vulkan_device(vkdev);
 

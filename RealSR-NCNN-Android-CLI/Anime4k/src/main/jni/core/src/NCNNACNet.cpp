@@ -196,8 +196,8 @@ void Anime4KCPP::NCNN::ACNet::init(
     detail::net[type].opt.use_vulkan_compute = detail::vkdev ? true : false;
 
     detail::net[type].opt.use_fp16_arithmetic = false;
-    detail::net[type].opt.use_fp16_packed = true;
-    detail::net[type].opt.use_fp16_storage = true;
+    detail::net[type].opt.use_fp16_packed = false;
+    detail::net[type].opt.use_fp16_storage = false;
 
     detail::net[type].opt.use_int8_packed = true;
     detail::net[type].opt.use_int8_storage = true;
@@ -232,12 +232,12 @@ void Anime4KCPP::NCNN::ACNet::init(int type, const int deviceID, const int threa
     detail::net[type].opt.use_vulkan_compute = detail::vkdev ? true : false;
 
     detail::net[type].opt.use_fp16_arithmetic = false;
-    detail::net[type].opt.use_fp16_packed = true;
-    detail::net[type].opt.use_fp16_storage = true;
+    detail::net[type].opt.use_fp16_packed = false;
+    detail::net[type].opt.use_fp16_storage = false;
 
     detail::net[type].opt.use_int8_packed = true;
     detail::net[type].opt.use_int8_storage = true;
-    detail::net[type].opt.use_int8_inference = false;
+    detail::net[type].opt.use_int8_inference = true;
 
     detail::net[type].opt.num_threads = threads;
 
@@ -264,12 +264,12 @@ void Anime4KCPP::NCNN::ACNet::init(const int deviceID, const int threads)
         detail::net[type].opt.use_vulkan_compute = detail::vkdev ? true : false;
 
         detail::net[type].opt.use_fp16_arithmetic = false;
-        detail::net[type].opt.use_fp16_packed = true;
-        detail::net[type].opt.use_fp16_storage = true;
+        detail::net[type].opt.use_fp16_packed = false;
+        detail::net[type].opt.use_fp16_storage = false;
 
         detail::net[type].opt.use_int8_packed = true;
         detail::net[type].opt.use_int8_storage = true;
-        detail::net[type].opt.use_int8_inference = false;
+        detail::net[type].opt.use_int8_inference = true;
 
         detail::net[type].opt.num_threads = threads;
 
